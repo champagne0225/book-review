@@ -26,8 +26,13 @@ class BooksController extends Controller
         ]);
     }
     
-    public function store(request $request)
+    public function store(Request $request)
     {
+        $request->validate([
+            'title' => 'required|max:255',
+            'writer' => 'required|max:255',
+        ]);
+        
         $book = new Book;
         $book->title = $request->title;
         $book->writer = $request->writer;
@@ -56,6 +61,11 @@ class BooksController extends Controller
     
     public function update(Request $request, $id)
     {
+        $request->validate([
+            'title' => 'required|max:255',
+            'writer' => 'required|max:255',
+        ]);
+
         $book = Book::findOrFail($id);
         $book->title = $request->title;
         $book->writer = $request->writer;
