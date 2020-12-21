@@ -12,6 +12,8 @@
             <ul class="navbar-nav">
                 @if (Auth::check())
                     {{-- ユーザ一覧ページへのリンク --}}
+                    <li class="nav-item">{!! link_to_route('books.index', '検索・登録', [], ['class' => 'nav-link']) !!}</li>
+                    <li class="nav-item">{!! link_to_route('signup.get', '感想・レビュー', [], ['class' => 'nav-link']) !!}</li>
                     <li class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">メニュー</a>
                         <ul class="dropdown-menu dropdown-menu-right">
