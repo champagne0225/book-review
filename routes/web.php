@@ -26,6 +26,8 @@ Route::get('logout', 'Auth\LoginController@logout')->name('logout.get');
 
 Route::resource('books', 'BooksController');
 
+Route::get('search','SearchController@index')->name('search');
+
 Route::group(['middleware' => ['auth']], function () {
     Route::resource('users', 'UsersController', ['only' => ['index', 'show']]);
     Route::resource('books', 'BooksController', ['only' => ['store', 'destroy']]);
