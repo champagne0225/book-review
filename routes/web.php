@@ -29,6 +29,12 @@ Route::resource('books', 'BooksController');
 Route::get('search','SearchController@index')->name('search');
 
 Route::group(['middleware' => ['auth']], function () {
+    Route::group(['prefix' => 'users/{id}'], function () {
+        Route::post('register', 'BookRegisterController@store')->name('book.register');
+        Route::delete('unregister', 'BookRegisterController@destroy')->name('book.unregister');
+        Route::get('registering', 'UsersController@registering')->name('users.registering');
+    });
+    
     Route::resource('users', 'UsersController', ['only' => ['index', 'show']]);
     Route::resource('books', 'BooksController', ['only' => ['store', 'destroy']]);
 });

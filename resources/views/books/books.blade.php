@@ -21,6 +21,7 @@
                     <tr>
                         <th>タイトル</th>
                         <th>筆者</th>
+                        <th>登録</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -28,6 +29,9 @@
                     <tr>
                         <td>{!! link_to_route('books.show', $item->title, ['book' => $item->id]) !!}</td>
                         <td>{{ $item->writer }}</td>
+                        <td>
+                            @include('book_register.register_button')
+                        </td>
                     </tr>
                     @endforeach
                 </tbody>
@@ -38,6 +42,7 @@
                     <tr>
                         <th>タイトル</th>
                         <th>筆者</th>
+                        <th>登録</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -45,6 +50,9 @@
                     <tr>
                         <td>{!! link_to_route('books.show', $book->title, ['book' => $book->id]) !!}</td>
                         <td>{{ $book->writer }}</td>
+                        <td>
+                            @include('book_register.register_button')
+                        </td>
                     </tr>
                     @endforeach
                 </tbody>
