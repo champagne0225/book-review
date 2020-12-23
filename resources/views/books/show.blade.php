@@ -10,7 +10,7 @@
             <td>{{ $book->title }}</td>
         </tr>
         <tr>
-            <th>筆者</th>
+            <th>著者</th>
             <td>{{ $book->writer }}</td>
         </tr>
     </table>

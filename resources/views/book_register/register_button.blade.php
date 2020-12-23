@@ -6,7 +6,7 @@
 @else
     {{-- 登録ボタンのフォーム --}}
     {!! Form::open(['route' => ['book.register', $book->id]]) !!}
-        {!! Form::select('status', ['have_read' => '読んだ本', 'reading' => '読んでる本', 'want_to_read' => "読みたい本"]) !!}
+        {!! Form::select('status', ['' => '状態を選択', 'have_read' => '読んだ本', 'reading' => '読んでる本', 'want_to_read' => "読みたい本"]) !!}
         {!! Form::submit('登録', ['class' => "btn btn-primary btn-block"]) !!}
     {!! Form::close() !!}
 @endif

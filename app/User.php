@@ -57,8 +57,9 @@ class User extends Authenticatable
         $exist = $this->is_registering($bookId);
 
         if ($exist) {
-            // すでに登録していれば何もしない
-            return false;
+            // すでに登録していれば変更する
+            $this->registering()->updateExistingPivot($bookId, ['status' => $status]);
+            return true;
         } else {
             // 未登録であれば登録する
             $this->registering()->attach($bookId, ['status' => $status]);
@@ -105,5 +106,39 @@ class User extends Authenticatable
     public function loadRelationshipCounts()
     {
         $this->loadCount(['registering']);
+    }
+
+        
+    /**
+     * このユーザが読んだ本に登録中の本に絞り込む。
+     */
+    public function feed_have_reads()
+    {
+        // このユーザが読んだ本に登録中の本のidを取得して配列にする
+        $bookIds = $this->registering()->where('status', 'have_read')->pluck('book_id')->toArray();
+        // この本のidの本に絞り込む
+        return Book::whereIn('id', $bookIds);
+    }
+
+    /**
+     * このユーザが読んでる本に登録中の本に絞り込む。
+     */
+    public function feed_readings()
+    {
+        // このユーザが読んでる本に登録中の本のidを取得して配列にする
+        $bookIds = $this->registering()->where('status', 'reading')->pluck('book_id')->toArray();
+        // この本のidの本に絞り込む
+        return Book::whereIn('id', $bookIds);
+    }
+
+    /**
+     * このユーザが読みたい本に登録中の本に絞り込む。
+     */
+    public function feed_want_to_reads()
+    {
+        // このユーザが読んでる本に登録中の本のidを取得して配列にする
+        $bookIds = $this->registering()->where('status', 'want_to_read')->pluck('book_id')->toArray();
+        // この本のidの本に絞り込む
+        return Book::whereIn('id', $bookIds);
     }
 }

@@ -13,7 +13,7 @@
                     {!! Form::text('title', null, ['class' => 'form-control']) !!}
                 </div>
                 <div class="form-group">
-                    {!! Form::label('writer', '筆者:') !!}
+                    {!! Form::label('writer', '著者:') !!}
                     {!! Form::text('writer', null, ['class' => 'form-control']) !!}
                 </div>
 

@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'BookRegisterController@index');
 
 // ユーザ登録
 Route::get('signup', 'Auth\RegisterController@showRegistrationForm')->name('signup.get');
@@ -32,9 +30,9 @@ Route::group(['middleware' => ['auth']], function () {
     Route::group(['prefix' => 'users/{id}'], function () {
         Route::post('register', 'BookRegisterController@store')->name('book.register');
         Route::delete('unregister', 'BookRegisterController@destroy')->name('book.unregister');
-        Route::get('registering', 'UsersController@registering')->name('users.registering');
+        Route::post('update', 'BookRegisterController@update')->name('status.update');
+        Route::get('registering', 'BooksController@registering')->name('books.registering');
     });
     
-    Route::resource('users', 'UsersController', ['only' => ['index', 'show']]);
     Route::resource('books', 'BooksController', ['only' => ['store', 'destroy']]);
 });

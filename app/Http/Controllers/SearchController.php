@@ -22,10 +22,10 @@ class SearchController extends Controller
             $query->where('title', 'like', '%'.$search.'%')->get();
         }
         
-        $data = $query->paginate(10);
+        $books = $query->paginate(10);
         
         return view('books.books', [
-            'data' => $data,
+            'books' => $books,
         ]);
     }
 }
