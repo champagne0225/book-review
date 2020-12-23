@@ -30,6 +30,10 @@
                                             {!! Form::select('status', ['' => '状態を選択', 'reading' => '読んでる本', 'want_to_read' => "読みたい本"]) !!}
                                             {!! Form::submit('変更', ['class' => "btn btn-primary btn-block"]) !!}
                                         {!! Form::close() !!}
+                                        {{-- 登録解除ボタンのフォーム --}}
+                                        {!! Form::open(['route' => ['book.unregister', $have_read->id], 'method' => 'delete']) !!}
+                                            {!! Form::submit('解除', ['class' => "btn btn-danger btn-block"]) !!}
+                                        {!! Form::close() !!}
                                     </div>
                                 </li>
                             @endforeach
@@ -53,6 +57,10 @@
                                             {!! Form::select('status', ['' => '状態を選択', 'have_read' => '読んだ本', 'want_to_read' => "読みたい本"]) !!}
                                             {!! Form::submit('変更', ['class' => "btn btn-primary btn-block"]) !!}
                                         {!! Form::close() !!}
+                                        {{-- 登録解除ボタンのフォーム --}}
+                                        {!! Form::open(['route' => ['book.unregister', $reading->id], 'method' => 'delete']) !!}
+                                            {!! Form::submit('解除', ['class' => "btn btn-danger btn-block"]) !!}
+                                        {!! Form::close() !!}
                                     </div>
                                 </li>
                             @endforeach
@@ -75,6 +83,10 @@
                                         {!! Form::open(['route' => ['status.update', $want_to_read->id]]) !!}
                                             {!! Form::select('status', ['' => '状態を選択', 'have_read' => '読んだ本', 'reading' => '読んでる本']) !!}
                                             {!! Form::submit('変更', ['class' => "btn btn-primary btn-block"]) !!}
+                                        {!! Form::close() !!}
+                                        {{-- 登録解除ボタンのフォーム --}}
+                                        {!! Form::open(['route' => ['book.unregister', $want_to_read->id], 'method' => 'delete']) !!}
+                                            {!! Form::submit('解除', ['class' => "btn btn-danger btn-block"]) !!}
                                         {!! Form::close() !!}
                                     </div>
                                 </li>

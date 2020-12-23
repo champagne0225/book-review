@@ -30,9 +30,13 @@ Route::group(['middleware' => ['auth']], function () {
     Route::group(['prefix' => 'users/{id}'], function () {
         Route::post('register', 'BookRegisterController@store')->name('book.register');
         Route::delete('unregister', 'BookRegisterController@destroy')->name('book.unregister');
-        Route::post('update', 'BookRegisterController@update')->name('status.update');
+        Route::post('status_update', 'BookRegisterController@update')->name('status.update');
         Route::get('registering', 'BooksController@registering')->name('books.registering');
     });
+
+    Route::put('reviews/{book_id}', 'BookReviewController@update')->name('review.update');
+    Route::get('reviews/{book_id}/edit', 'BookReviewController@edit')->name('review.edit');
+    Route::get('reviews', 'BookReviewController@index')->name('reviews.index');
     
     Route::resource('books', 'BooksController', ['only' => ['store', 'destroy']]);
 });

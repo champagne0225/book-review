@@ -89,15 +89,27 @@ class User extends Authenticatable
     }
 
     /**
-     * 指定された $bookIdのユーザをこのユーザが登録中であるか調べる。登録中ならtrueを返す。
+     * 指定された $bookIdの本をこのユーザが登録中であるか調べる。登録中ならtrueを返す。
      *
      * @param  int  $bookId
      * @return bool
      */
     public function is_registering($bookId)
     {
-        // 登録中ユーザの中に $bookIdのものが存在するか
+        // 登録中の本の中に $bookIdのものが存在するか
         return $this->registering()->where('book_id', $bookId)->exists();
+    }
+
+    /**
+     * $bookIdで指定された本にレビューを登録する。
+     *
+     * @param  int  $bookId
+     * @return bool
+     */
+    public function review($bookId, $review)
+    {
+        $this->registering()->updateExistingPivot($bookId, ['review' => $review]);
+        return true;
     }
 
     /**
@@ -110,7 +122,7 @@ class User extends Authenticatable
 
         
     /**
-     * このユーザが読んだ本に登録中の本に絞り込む。
+     * このユーザが読んだ本に絞り込む。
      */
     public function feed_have_reads()
     {
@@ -121,7 +133,7 @@ class User extends Authenticatable
     }
 
     /**
-     * このユーザが読んでる本に登録中の本に絞り込む。
+     * このユーザが読んでる本に絞り込む。
      */
     public function feed_readings()
     {
@@ -132,7 +144,7 @@ class User extends Authenticatable
     }
 
     /**
-     * このユーザが読みたい本に登録中の本に絞り込む。
+     * このユーザが読みたい本に絞り込む。
      */
     public function feed_want_to_reads()
     {
@@ -140,5 +152,15 @@ class User extends Authenticatable
         $bookIds = $this->registering()->where('status', 'want_to_read')->pluck('book_id')->toArray();
         // この本のidの本に絞り込む
         return Book::whereIn('id', $bookIds);
+    }
+
+    /**
+     * このユーザが登録したレビューを取り出す。
+     */
+    public function feed_reviews()
+    {
+        // このユーザが読んだ本に登録中のレビューを取得して配列にする
+        $reviews = $this->registering()->where('status', 'have_read')->pluck('review', 'book_id')->toArray();
+        return $reviews;
     }
 }
