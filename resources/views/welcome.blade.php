@@ -23,6 +23,11 @@
                             @foreach ($have_reads as $have_read)
                                 <li class="col mb-2">
                                     <div>
+                                        @if (!isset($have_read->image_url))
+                                            <img class="rounded img-fluid" src="{{ asset('storage/book_image/no_image.png') }}" style="max-width: 100px;" alt="">
+                                        @else
+                                            <img class="rounded img-fluid" src="{{ asset('storage/book_image/'.$have_read->image_url) }}" style="max-width: 100px;" alt="">
+                                        @endif
                                         <p class="mb-0">{!! nl2br(e($have_read->title)) !!}</p>
                                         <p class="mb-0">{!! nl2br(e($have_read->writer)) !!}</p>
                                         {{-- 状態変更ボタンのフォーム --}}
@@ -50,6 +55,11 @@
                             @foreach ($readings as $reading)
                                 <li class="col mb-2">
                                     <div>
+                                        @if (!isset($reading->image_url))
+                                            <img class="rounded img-fluid" src="{{ asset('storage/book_image/no_image.png') }}" style="max-width: 100px;" alt="">
+                                        @else
+                                            <img class="rounded img-fluid" src="{{ asset('storage/book_image/'.$reading->image_url) }}" style="max-width: 100px;" alt="">
+                                        @endif
                                         <p class="mb-0">{!! nl2br(e($reading->title)) !!}</p>
                                         <p class="mb-0">{!! nl2br(e($reading->writer)) !!}</p>
                                         {{-- 状態変更ボタンのフォーム --}}
@@ -77,6 +87,11 @@
                             @foreach ($want_to_reads as $want_to_read)
                                 <li class="col mb-2">
                                     <div>
+                                        @if (!isset($want_to_read->image_url))
+                                            <img class="rounded img-fluid" src="{{ asset('storage/book_image/no_image.png') }}" style="max-width: 100px;" alt="">
+                                        @else
+                                            <img class="rounded img-fluid" src="{{ asset('storage/book_image/'.$want_to_read->image_url) }}" style="max-width: 100px;" alt="">
+                                        @endif
                                         <p class="mb-0">{!! nl2br(e($want_to_read->title)) !!}</p>
                                         <p class="mb-0">{!! nl2br(e($want_to_read->writer)) !!}</p>
                                         {{-- 状態変更ボタンのフォーム --}}

@@ -6,7 +6,7 @@
 
     <div class="row">
         <div class="col-6">
-            {!! Form::model($book, ['route' => ['books.update', $book->id], 'method' => 'put']) !!}
+            {!! Form::model($book, ['route' => ['books.update', $book->id], 'method' => 'put', 'files' => true]) !!}
 
                 <div class="form-group">
                     {!! Form::label('title', 'タイトル:') !!}
@@ -16,6 +16,11 @@
                 <div class="form-group">
                     {!! Form::label('writer', '著者:') !!}
                     {!! Form::text('writer', null, ['class' => 'form-control']) !!}
+                </div>
+
+                <div class="form-group">
+                    {!! Form::label('image', '画像:') !!}
+                    {!! Form::file('image', null, ['class' => 'form-control']) !!}
                 </div>
 
                 {!! Form::submit('更新', ['class' => 'btn btn-primary']) !!}

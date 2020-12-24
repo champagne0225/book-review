@@ -17,9 +17,11 @@ class BookReviewController extends Controller
             // ユーザの登録中の本一覧を作成日時の降順で取得
             $have_reads = $user->feed_have_reads()->orderBy('created_at', 'desc')->paginate(10);
             $reviews = $user->feed_reviews();
+            $completion_dates = $user->feed_completion_dates();
 
             $data = [
                 'have_reads' => $have_reads,
+                'completion_dates' => $completion_dates,
                 'reviews' => $reviews,
             ];
         }
@@ -43,9 +45,10 @@ class BookReviewController extends Controller
         ]);
 
         $review = $request->review;
+        $date = $request->year.'-'.$request->month.'-'.$request->day;
     
         // 認証済みユーザ（閲覧者）が、idの本のレビューを登録する
-        \Auth::user()->review($id, $review);
+        \Auth::user()->review($id, $review, $date);
         
         return redirect('reviews');
     }

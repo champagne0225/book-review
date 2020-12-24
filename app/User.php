@@ -106,9 +106,10 @@ class User extends Authenticatable
      * @param  int  $bookId
      * @return bool
      */
-    public function review($bookId, $review)
+    public function review($bookId, $review, $date)
     {
         $this->registering()->updateExistingPivot($bookId, ['review' => $review]);
+        $this->registering()->updateExistingPivot($bookId, ['completion_date' => $date]);
         return true;
     }
 
@@ -163,4 +164,15 @@ class User extends Authenticatable
         $reviews = $this->registering()->where('status', 'have_read')->pluck('review', 'book_id')->toArray();
         return $reviews;
     }
+
+    /**
+     * このユーザが登録した完了日を取り出す。
+     */
+    public function feed_completion_dates()
+    {
+        // このユーザが読んだ本に登録中のレビューを取得して配列にする
+        $completion_dates = $this->registering()->where('status', 'have_read')->pluck('completion_date', 'book_id')->toArray();
+        return $completion_dates;
+    }
+
 }
