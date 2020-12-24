@@ -33,8 +33,16 @@ class BookReviewController extends Controller
     {
         $book = Book::findOrFail($id);
         
+        if (\Auth::check()) {
+            // 認証済みユーザ（閲覧者）を取得
+            $user = \Auth::user();
+            // ユーザの登録中の本一覧を作成日時の降順で取得
+            $reviews = $user->feed_reviews();
+        }
+        
         return view('reviews.edit', [
             'book' => $book,
+            'reviews' => $reviews,
         ]);
     }
 

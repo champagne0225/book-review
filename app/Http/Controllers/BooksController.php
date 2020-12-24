@@ -10,7 +10,7 @@ class BooksController extends Controller
 {
     public function index()
     {
-        $books = Book::paginate(10);
+        $books = Book::orderBy('created_at', 'desc')->paginate(10);
         $data = '';
         
         return view('books.books', [
@@ -33,6 +33,10 @@ class BooksController extends Controller
         $request->validate([
             'title' => 'required|max:255',
             'writer' => 'required|max:255',
+        ],
+        [
+            'title.required' => 'タイトルは必須項目です。',
+            'writer.required' => '著者は必須項目です。',
         ]);
         
         $book = new Book;
@@ -71,6 +75,10 @@ class BooksController extends Controller
         $request->validate([
             'title' => 'required|max:255',
             'writer' => 'required|max:255',
+        ],
+        [
+            'title.required' => 'タイトルは必須項目です。',
+            'writer.required' => '著者は必須項目です。',
         ]);
 
         $book = Book::findOrFail($id);

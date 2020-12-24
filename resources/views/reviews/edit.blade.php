@@ -19,7 +19,7 @@
 
                 <div class="form-group">
                     {!! Form::label('review', 'レビュー:') !!}
-                    {!! Form::textarea('review', null, ['class' => 'form-control']) !!}
+                    {!! Form::textarea('review', old('review', isset($reviews[$book->id]) ? $reviews[$book->id] : ''), ['class' => 'form-control']) !!}
                 </div>
 
                 {!! Form::submit('更新', ['class' => 'btn btn-primary']) !!}

@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/', 'BookRegisterController@index');
+Route::get('/', 'BookRegisterController@index')->name('mypage');
 
 // ユーザ登録
 Route::get('signup', 'Auth\RegisterController@showRegistrationForm')->name('signup.get');

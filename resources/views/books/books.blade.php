@@ -2,20 +2,25 @@
 
 @section('content')
 
-    <div class="jumbotron container">
+    <div class="jumbotron container" style="padding: 2rem;">
         <h2>検索・登録</h2>
         <hr>
         <div>
             {!! Form::open(['route' => 'search', 'method' => 'get']) !!}
-                <div class="form-group row text-center">
-                    {!! Form::text('title', '', ['class' => 'form-control ml-2 col-sm-8']) !!}
+                <div class="form-group row">
+                    {!! Form::text('title', '', ['class' => 'form-control offset-2 col-7']) !!}
                     {!! Form::submit('検索', ['class' => 'btn btn-primary ml-1']) !!}
                 </div>
             {!! Form::close() !!}
         </div>
     </div>
     
-    <div class="row mt-5">
+    <div class="row">
+        {{-- 新規本登録ページへのリンク --}}
+        {!! link_to_route('books.create', '新しく本を追加', [], ['class' => 'btn btn-primary']) !!}
+    </div>
+
+    <div class="row mt-1">
         <table class="table table-striped">
             <thead>
                 <tr>
@@ -29,9 +34,9 @@
                 @foreach ($books as $book)
                     <tr>
                         @if (!isset($book->image_url))
-                            <td><img class="rounded img-fluid" src="{{ asset('storage/book_image/no_image.png') }}" style="max-width: 100px;" alt=""></td>
+                            <td><img class="rounded img-fluid" src="{{ asset('storage/book_image/no_image.png') }}" style="max-width: 100px; height: 141.531px; " alt=""></td>
                         @else
-                            <td><img class="rounded img-fluid" src="{{ asset('storage/book_image/'.$book->image_url) }}" style="max-width: 100px;" alt=""></td>
+                            <td><img class="rounded img-fluid" src="{{ asset('storage/book_image/'.$book->image_url) }}" style="max-width: 100px; height: 141.53px; object-fit:cover;"" alt=""></td>
                         @endif
                         <td>{!! link_to_route('books.show', $book->title, ['book' => $book->id]) !!}</td>
                         <td>{{ $book->writer }}</td>
@@ -44,10 +49,6 @@
         </table>
         {{-- ページネーションのリンク --}}
         {{ $books->links() }}
-    </div>
-    <div class="row">
-        {{-- 新規本登録ページへのリンク --}}
-        {!! link_to_route('books.create', '新しく追加', [], ['class' => 'btn btn-primary']) !!}
     </div>
 
 @endsection

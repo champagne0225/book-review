@@ -1,7 +1,7 @@
 <header class="mb-4">
     <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
         {{-- トップページへのリンク --}}
-        <a class="navbar-brand" href="/">Logo</a>
+        <a class="navbar-brand" href="/">Book Review</a>
 
         <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#nav-bar">
             <span class="navbar-toggler-icon"></span>
@@ -12,9 +12,10 @@
             <ul class="navbar-nav">
                 @if (Auth::check())
                     {{-- ユーザ一覧ページへのリンク --}}
-                    <li class="nav-item">{!! link_to_route('books.index', '検索・登録', [], ['class' => 'nav-link']) !!}</li>
-                    <li class="nav-item">{!! link_to_route('reviews.index', '感想・レビュー', [], ['class' => 'nav-link']) !!}</li>
-                    <li class="nav-item dropdown">
+                    <li class="nav-item">{!! link_to_route('mypage', 'マイページ', [], ['class' => 'nav-link']) !!}</li>
+                    <li class="nav-item ml-3">{!! link_to_route('books.index', '検索・登録', [], ['class' => 'nav-link']) !!}</li>
+                    <li class="nav-item ml-3">{!! link_to_route('reviews.index', '感想・レビュー', [], ['class' => 'nav-link']) !!}</li>
+                    <li class="nav-item dropdown ml-3">
                         <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">メニュー</a>
                         <ul class="dropdown-menu dropdown-menu-right">
                             {{-- ユーザ詳細ページへのリンク --}}
