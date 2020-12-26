@@ -16,11 +16,17 @@ class BookRegisterController extends Controller
             $have_reads = $user->feed_have_reads()->orderBy('created_at', 'desc')->paginate(10);
             $readings = $user->feed_readings()->orderBy('created_at', 'desc')->paginate(10);
             $want_to_reads = $user->feed_want_to_reads()->orderBy('created_at', 'desc')->paginate(10);
+            $have_reads_counts = $user->feed_have_reads()->count();
+            $readings_counts = $user->feed_readings()->count();
+            $want_to_reads_counts = $user->feed_want_to_reads()->count();
 
             $data = [
                 'have_reads' => $have_reads,
                 'readings' => $readings,
                 'want_to_reads' => $want_to_reads,
+                'have_reads_counts' => $have_reads_counts,
+                'readings_counts' => $readings_counts,
+                'want_to_reads_counts' => $want_to_reads_counts,
             ];
         }
 

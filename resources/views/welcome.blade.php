@@ -14,12 +14,12 @@
                     </div>
                 </div>
             </aside>
-            <div class="col-sm-9">
+            <div class="col-sm-9 book-status">
                 <div class="jumbotron" style="padding: 2rem;">
-                    <h3>読んでる本</h3>
+                    <h3 style="display: inline;">読んでる本<span class="badge badge-secondary ml-2">{!! $readings_counts !!}</span></h3>
                     <hr>
                     @if (count($readings) > 0)
-                        <ul class="list-unstyled row row-cols-2 row-cols-md-3 row-cols-lg-4">
+                        <ul class="list-unstyled mb-0 row row-cols-2 row-cols-md-3 row-cols-lg-4">
                             @foreach ($readings as $reading)
                                 <li class="col mb-2" style="height: 330px;">
                                     <div class="text-center">
@@ -48,10 +48,10 @@
                     @endif
                 </div>
                 <div class="jumbotron" style="padding: 2rem;">
-                    <h3>読みたい本</h3>
+                    <h3 style="display: inline;">読みたい本<span class="badge badge-secondary ml-2">{!! $want_to_reads_counts !!}</span></h3>
                     <hr>
                     @if (count($want_to_reads) > 0)
-                        <ul class="list-unstyled row row-cols-2 row-cols-md-3 row-cols-lg-4">
+                        <ul class="list-unstyled mb-0 row row-cols-2 row-cols-md-3 row-cols-lg-4">
                             @foreach ($want_to_reads as $want_to_read)
                                 <li class="col mb-2" style="height: 330px;">
                                     <div class="text-center">
@@ -80,10 +80,10 @@
                     @endif
                 </div>
                 <div class="jumbotron" style="padding: 2rem;">
-                    <h3>読んだ本</h3>
+                    <h3 style="display: inline;">読んだ本<span class="badge badge-secondary ml-2">{!! $have_reads_counts !!}</span></h3>
                     <hr>
                     @if (count($have_reads) > 0)
-                        <ul class="list-unstyled row row-cols-2 row-cols-md-3 row-cols-lg-4">
+                        <ul class="list-unstyled mb-0 row row-cols-2 row-cols-md-3 row-cols-lg-4">
                             @foreach ($have_reads as $have_read)
                                 <li class="col mb-2" style="height: 330px;">
                                     <div class="text-center">

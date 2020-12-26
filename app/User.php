@@ -114,15 +114,6 @@ class User extends Authenticatable
     }
 
     /**
-     * このユーザに関係するモデルの件数をロードする。
-     */
-    public function loadRelationshipCounts()
-    {
-        $this->loadCount(['registering']);
-    }
-
-        
-    /**
      * このユーザが読んだ本に絞り込む。
      */
     public function feed_have_reads()

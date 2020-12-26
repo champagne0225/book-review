@@ -1,2 +1,9 @@
 @charset 'utf-8';
 
+/* Welcome
+------------------------------ */
+@media (max-width: 576px) {
+    .book-status {
+        margin-top: 2rem;
+    }
+}
