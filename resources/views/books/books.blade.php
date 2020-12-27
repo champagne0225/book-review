@@ -34,7 +34,7 @@
                             @else
                                 <img class="rounded img-fluid" src="{{ asset('storage/book_image/'.$book->image_url) }}" style="max-width: 100px; height: 141.53px; object-fit:cover;" alt="">
                             @endif
-                            <p class="mb-0" style="height: 2.7rem; overflow:hidden;">{!! nl2br(e($book->title)) !!}</p>
+                            <p class="mb-0" style="height: 2.8rem; overflow:hidden;">{!! link_to_route('books.show', $book->title, ['book' => $book->id]) !!}</p>
                             <p class="mb-0" style="font-size: 0.8rem; height: 1.2rem; line-height: 1.4rem; overflow: hidden;">{!! nl2br(e($book->writer)) !!}</p>
                             @include('book_register.register_button')
                         </div>
