@@ -19,11 +19,11 @@
                 </div>
 
                 <div class="form-group">
-                    {!! Form::label('image', '画像:') !!}
-                    {!! Form::file('image', null, ['class' => 'form-control']) !!}
+                    {!! Form::label('image_url', '画像URL:') !!}
+                    {!! Form::text('image_url', null, ['class' => 'form-control']) !!}
                 </div>
 
-                {!! Form::submit('登　録', ['class' => 'btn btn-primary']) !!}
+                {!! Form::submit('登録', ['class' => 'btn btn-primary']) !!}
 
             {!! Form::close() !!}
         </div>

@@ -11,9 +11,9 @@
                     <li class="col mb-2">
                         <div class="text-center">
                             @if (!isset($have_read->image_url))
-                                <td><img class="rounded img-fluid" src="{{ asset('storage/book_image/no_image.png') }}" style="max-width: 100px; height: 141.53px;" alt=""></td>
+                                <div class="no_image">NO IMAGE</div>
                             @else
-                                <td><img class="rounded img-fluid" src="{{ asset('storage/book_image/'.$have_read->image_url) }}" style="max-width: 100px; height: 141.53px; object-fit:cover;" alt=""></td>
+                                <img class="rounded img-fluid" src="{{ $have_read->image_url }}" style="max-width: 100px; height: 141.53px; object-fit:cover;" alt="">
                             @endif
                             <p class="mb-0" style="height: 2.7rem; overflow: hidden;">{!! nl2br(e($have_read->title)) !!}</p>
                             <p class="mb-0" style="font-size: 0.8rem; height: 1.2rem; line-height: 1.4rem; overflow: hidden;">{!! nl2br(e($have_read->writer)) !!}</p>
@@ -32,9 +32,9 @@
         <div class="reviews jumbotron" style="padding: 2rem;">
             <div class="row row-cols-2">
                 @if (!isset($have_read->image_url))
-                    <img class="rounded img-fluid" src="{{ asset('storage/book_image/no_image.png') }}" alt="">
+                    <div class="no_image">NO IMAGE</div>
                 @else
-                    <img class="book_image rounded img-fluid" src="{{ asset('storage/book_image/'.$have_read->image_url) }}" alt="">
+                    <img class="book_image rounded img-fluid" src="{{ $have_read->image_url }}" alt="">
                 @endif
                 <h3 class="ml-3">{!! nl2br(e($have_read->title)) !!}<br>（{!! nl2br(e($have_read->writer)) !!}）</h3>
             </div>

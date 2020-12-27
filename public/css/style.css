@@ -1,5 +1,19 @@
 @charset 'utf-8';
 
+/* 共通
+------------------------------ */
+.no_image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    max-width: 100px;
+    height: 141.531px;
+    background-color: white;
+    border-radius: 5px;
+    color: #aaa;
+}
+
 /* Welcome
 ------------------------------ */
 .nickname {
@@ -19,12 +33,12 @@
 .reviews h3 {
     font-size: 1.4rem;
 }
+.reviews .no_image {
+    margin: 0;
+}
 .reviews img {
     max-width: 100px;
     height: 141.531px;
-}
-
-.reviews .book_image {
     object-fit: cover;
 }
 
@@ -33,9 +47,15 @@
         max-width: 50px;
         height: 70.766px;
     }
+    .reviews .no_image {
+        padding:10px;
+        max-width: 50px;
+        height: 70.766px;
+        font-size: 0.5rem;
+    }
     .reviews h3 {
-        font-size: 1.2rem;
-        flex: 0 0 75%;
-        max-width: 75%;
+        font-size: 1rem;
+        flex: 0 0 70%;
+        max-width: 70%;
     }
 }

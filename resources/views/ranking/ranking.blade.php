@@ -11,9 +11,9 @@
                     <span class="badge badge-warning" style="font-size: 1.7rem;">1</span>
                     <div class="text-center">
                         @if (!isset($ranking_have_reads1->image_url))
-                            <img class="rounded img-fluid" src="{{ asset('storage/book_image/no_image.png') }}" style="max-width: 100px; height: 141.531px;" alt="">
+                            <div class="no_image">NO IMAGE</div>
                         @else
-                            <img class="rounded img-fluid" src="{{ asset('storage/book_image/'.$ranking_have_reads1->image_url) }}" style="max-width: 100px;" alt="">
+                            <img class="rounded img-fluid" src="{{ $ranking_have_reads1->image_url }}" style="max-width: 100px;" alt="">
                         @endif
                         <p class="mb-0" style="height: 2.7rem; overflow:hidden;">{!! nl2br(e($ranking_have_reads1->title)) !!}</p>
                         <p class="mb-0" style="font-size: 0.8rem; height: 1.2rem; line-height: 1.4rem; overflow: hidden;">{!! nl2br(e($ranking_have_reads1->writer)) !!}</p>
@@ -39,9 +39,9 @@
                     <span class="badge badge-danger" style="font-size: 1.7rem;">2</span>
                     <div class="text-center">
                         @if (!isset($ranking_have_reads2->image_url))
-                            <img class="rounded img-fluid" src="{{ asset('storage/book_image/no_image.png') }}" style="max-width: 100px; height: 141.531px;" alt="">
+                            <div class="no_image">NO IMAGE</div>
                         @else
-                            <img class="rounded img-fluid" src="{{ asset('storage/book_image/'.$ranking_have_reads2->image_url) }}" style="max-width: 100px;" alt="">
+                            <img class="rounded img-fluid" src="{{ $ranking_have_reads2->image_url }}" style="max-width: 100px;" alt="">
                         @endif
                         <p class="mb-0" style="height: 2.7rem; overflow:hidden;">{!! nl2br(e($ranking_have_reads2->title)) !!}</p>
                         <p class="mb-0" style="font-size: 0.8rem; height: 1.2rem; line-height: 1.4rem; overflow: hidden;">{!! nl2br(e($ranking_have_reads2->writer)) !!}</p>
@@ -67,9 +67,9 @@
                     <span class="badge badge-success" style="font-size: 1.7rem;">3</span>
                     <div class="text-center">
                         @if (!isset($ranking_have_reads3->image_url))
-                            <img class="rounded img-fluid" src="{{ asset('storage/book_image/no_image.png') }}" style="max-width: 100px; height: 141.531px;" alt="">
+                            <div class="no_image">NO IMAGE</div>
                         @else
-                            <img class="rounded img-fluid" src="{{ asset('storage/book_image/'.$ranking_have_reads3->image_url) }}" style="max-width: 100px;" alt="">
+                            <img class="rounded img-fluid" src="{{ $ranking_have_reads3->image_url }}" style="max-width: 100px;" alt="">
                         @endif
                         <p class="mb-0" style="height: 2.7rem; overflow:hidden;">{!! nl2br(e($ranking_have_reads3->title)) !!}</p>
                         <p class="mb-0" style="font-size: 0.8rem; height: 1.2rem; line-height: 1.4rem; overflow: hidden;">{!! nl2br(e($ranking_have_reads3->writer)) !!}</p>
@@ -102,9 +102,9 @@
                     <span class="badge badge-warning" style="font-size: 1.7rem;">1</span>
                     <div class="text-center">
                         @if (!isset($ranking_readings1->image_url))
-                            <img class="rounded img-fluid" src="{{ asset('storage/book_image/no_image.png') }}" style="max-width: 100px; height: 141.531px;" alt="">
+                            <div class="no_image">NO IMAGE</div>
                         @else
-                            <img class="rounded img-fluid" src="{{ asset('storage/book_image/'.$ranking_readings1->image_url) }}" style="max-width: 100px;" alt="">
+                            <img class="rounded img-fluid" src="{{ $ranking_readings1->image_url }}" style="max-width: 100px;" alt="">
                         @endif
                         <p class="mb-0" style="height: 2.7rem; overflow:hidden;">{!! nl2br(e($ranking_readings1->title)) !!}</p>
                         <p class="mb-0" style="font-size: 0.8rem; height: 1.2rem; line-height: 1.4rem; overflow: hidden;">{!! nl2br(e($ranking_readings1->writer)) !!}</p>
@@ -130,9 +130,9 @@
                     <span class="badge badge-danger" style="font-size: 1.7rem;">2</span>
                     <div class="text-center">
                         @if (!isset($ranking_readings2->image_url))
-                            <img class="rounded img-fluid" src="{{ asset('storage/book_image/no_image.png') }}" style="max-width: 100px; height: 141.531px;" alt="">
+                            <div class="no_image">NO IMAGE</div>
                         @else
-                            <img class="rounded img-fluid" src="{{ asset('storage/book_image/'.$ranking_readings2->image_url) }}" style="max-width: 100px;" alt="">
+                            <img class="rounded img-fluid" src="{{ $ranking_readings2->image_url }}" style="max-width: 100px;" alt="">
                         @endif
                         <p class="mb-0" style="height: 2.7rem; overflow:hidden;">{!! nl2br(e($ranking_readings2->title)) !!}</p>
                         <p class="mb-0" style="font-size: 0.8rem; height: 1.2rem; line-height: 1.4rem; overflow: hidden;">{!! nl2br(e($ranking_readings2->writer)) !!}</p>
@@ -158,9 +158,9 @@
                     <span class="badge badge-success" style="font-size: 1.7rem;">3</span>
                     <div class="text-center">
                         @if (!isset($ranking_readings3->image_url))
-                            <img class="rounded img-fluid" src="{{ asset('storage/book_image/no_image.png') }}" style="max-width: 100px; height: 141.531px;" alt="">
+                            <div class="no_image">NO IMAGE</div>
                         @else
-                            <img class="rounded img-fluid" src="{{ asset('storage/book_image/'.$ranking_readings3->image_url) }}" style="max-width: 100px;" alt="">
+                            <img class="rounded img-fluid" src="{{ $ranking_readings3->image_url }}" style="max-width: 100px;" alt="">
                         @endif
                         <p class="mb-0" style="height: 2.7rem; overflow:hidden;">{!! nl2br(e($ranking_readings3->title)) !!}</p>
                         <p class="mb-0" style="font-size: 0.8rem; height: 1.2rem; line-height: 1.4rem; overflow: hidden;">{!! nl2br(e($ranking_readings3->writer)) !!}</p>
@@ -193,9 +193,9 @@
                     <span class="badge badge-warning" style="font-size: 1.7rem;">1</span>
                     <div class="text-center">
                         @if (!isset($ranking_want_to_reads1->image_url))
-                            <img class="rounded img-fluid" src="{{ asset('storage/book_image/no_image.png') }}" style="max-width: 100px; height: 141.531px;" alt="">
+                            <div class="no_image">NO IMAGE</div>
                         @else
-                            <img class="rounded img-fluid" src="{{ asset('storage/book_image/'.$ranking_want_to_reads1->image_url) }}" style="max-width: 100px;" alt="">
+                            <img class="rounded img-fluid" src="{{ $ranking_want_to_reads1->image_url }}" style="max-width: 100px;" alt="">
                         @endif
                         <p class="mb-0" style="height: 2.7rem; overflow:hidden;">{!! nl2br(e($ranking_want_to_reads1->title)) !!}</p>
                         <p class="mb-0" style="font-size: 0.8rem; height: 1.2rem; line-height: 1.4rem; overflow: hidden;">{!! nl2br(e($ranking_want_to_reads1->writer)) !!}</p>
@@ -221,9 +221,9 @@
                     <span class="badge badge-danger" style="font-size: 1.7rem;">2</span>
                     <div class="text-center">
                         @if (!isset($ranking_want_to_reads2->image_url))
-                            <img class="rounded img-fluid" src="{{ asset('storage/book_image/no_image.png') }}" style="max-width: 100px; height: 141.531px;" alt="">
+                            <div class="no_image">NO IMAGE</div>
                         @else
-                            <img class="rounded img-fluid" src="{{ asset('storage/book_image/'.$ranking_want_to_reads2->image_url) }}" style="max-width: 100px;" alt="">
+                            <img class="rounded img-fluid" src="{{ $ranking_want_to_reads2->image_url }}" style="max-width: 100px;" alt="">
                         @endif
                         <p class="mb-0" style="height: 2.7rem; overflow:hidden;">{!! nl2br(e($ranking_want_to_reads2->title)) !!}</p>
                         <p class="mb-0" style="font-size: 0.8rem; height: 1.2rem; line-height: 1.4rem; overflow: hidden;">{!! nl2br(e($ranking_want_to_reads2->writer)) !!}</p>
@@ -249,9 +249,9 @@
                     <span class="badge badge-success" style="font-size: 1.7rem;">3</span>
                     <div class="text-center">
                         @if (!isset($ranking_want_to_reads3->image_url))
-                            <img class="rounded img-fluid" src="{{ asset('storage/book_image/no_image.png') }}" style="max-width: 100px; height: 141.531px;" alt="">
+                            <div class="no_image">NO IMAGE</div>
                         @else
-                            <img class="rounded img-fluid" src="{{ asset('storage/book_image/'.$ranking_want_to_reads3->image_url) }}" style="max-width: 100px;" alt="">
+                            <img class="rounded img-fluid" src="{{ $ranking_want_to_reads3->image_url }}" style="max-width: 100px;" alt="">
                         @endif
                         <p class="mb-0" style="height: 2.7rem; overflow:hidden;">{!! nl2br(e($ranking_want_to_reads3->title)) !!}</p>
                         <p class="mb-0" style="font-size: 0.8rem; height: 1.2rem; line-height: 1.4rem; overflow: hidden;">{!! nl2br(e($ranking_want_to_reads3->writer)) !!}</p>

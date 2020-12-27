@@ -24,9 +24,9 @@
                                 <li class="col mb-2" style="height: 330px;">
                                     <div class="text-center">
                                         @if (!isset($reading->image_url))
-                                            <img class="rounded img-fluid" src="{{ asset('storage/book_image/no_image.png') }}" style="max-width: 100px; height: 141.531px;" alt="">
+                                            <div class="no_image">NO IMAGE</div>
                                         @else
-                                            <img class="rounded img-fluid" src="{{ asset('storage/book_image/'.$reading->image_url) }}" style="max-width: 100px; height: 141.531px; object-fit:cover;" alt="">
+                                            <img class="rounded img-fluid" src="{{ $reading->image_url }}" style="max-width: 100px; height: 141.531px; object-fit:cover;" alt="">
                                         @endif
                                         <p class="mb-0" style="height: 2.7rem; overflow:hidden;">{!! nl2br(e($reading->title)) !!}</p>
                                         <p class="mb-0" style="font-size: 0.8rem; height: 1.2rem; line-height: 1.4rem; overflow: hidden;">{!! nl2br(e($reading->writer)) !!}</p>
@@ -56,9 +56,9 @@
                                 <li class="col mb-2" style="height: 330px;">
                                     <div class="text-center">
                                         @if (!isset($want_to_read->image_url))
-                                            <img class="rounded img-fluid" src="{{ asset('storage/book_image/no_image.png') }}" style="max-width: 100px; height: 141.531px;" alt="">
+                                            <div class="no_image">NO IMAGE</div>
                                         @else
-                                            <img class="rounded img-fluid" src="{{ asset('storage/book_image/'.$want_to_read->image_url) }}" style="max-width: 100px; height: 141.531px; object-fit:cover;" alt="">
+                                            <img class="rounded img-fluid" src="{{ $want_to_read->image_url }}" style="max-width: 100px; height: 141.531px; object-fit:cover;" alt="">
                                         @endif
                                         <p class="mb-0" style="height: 2.7rem; overflow:hidden;">{!! nl2br(e($want_to_read->title)) !!}</p>
                                         <p class="mb-0" style="font-size: 0.8rem; height: 1.2rem; line-height: 1.4rem; overflow: hidden;">{!! nl2br(e($want_to_read->writer)) !!}</p>
@@ -88,9 +88,9 @@
                                 <li class="col mb-2" style="height: 330px;">
                                     <div class="text-center">
                                         @if (!isset($have_read->image_url))
-                                            <img class="rounded img-fluid" src="{{ asset('storage/book_image/no_image.png') }}" style="max-width: 100px; height: 141.531px;" alt="">
+                                            <div class="no_image">NO IMAGE</div>
                                         @else
-                                            <img class="rounded img-fluid" src="{{ asset('storage/book_image/'.$have_read->image_url) }}" style="max-width: 100px; height: 141.531px; object-fit:cover;" alt="">
+                                            <img class="rounded img-fluid" src="{{ $have_read->image_url }}" style="max-width: 100px; height: 141.531px; object-fit:cover;" alt="">
                                         @endif
                                         <p class="mb-0" style="height: 2.7rem; overflow: hidden;">{!! nl2br(e($have_read->title)) !!}</p>
                                         <p class="mb-0" style="font-size: 0.8rem; height: 1.2rem; line-height: 1.4rem; overflow: hidden;">{!! nl2br(e($have_read->writer)) !!}</p>
