@@ -41,12 +41,10 @@ class BooksController extends Controller
         
         $book = new Book;
 
-        $image_file = $request->file('image');
-        
-        $filepath = $image_file->store('public/book_image');
         $book->image_url = str_replace('public/book_image/', '', $filepath);
         $book->title = $request->title;
         $book->writer = $request->writer;
+        $book->image_url = $request->image_url;
         $book->save();
         
         return redirect('books');
