@@ -3,7 +3,7 @@
 @section('content')
 
     <div class="jumbotron" style="padding: 2rem;">
-        <h2>レビュー未登録</h2>
+        <h3 style="font-size: 1.4rem;">レビュー未登録</h3>
         <hr>
         <ul class="list-unstyled row row-cols-2 row-cols-md-3 row-cols-lg-4">
             @foreach ($have_reads as $have_read)
@@ -29,14 +29,14 @@
     </div>
 
     @foreach($have_reads as $have_read)
-        <div class="jumbotron" style="padding: 2rem;">
+        <div class="reviews jumbotron" style="padding: 2rem;">
             <div class="row row-cols-2">
-            @if (!isset($have_read->image_url))
-                <img class="rounded img-fluid" src="{{ asset('storage/book_image/no_image.png') }}" style="max-width: 100px; height: 141.531px;" alt="">
-            @else
-                <img class="rounded img-fluid" src="{{ asset('storage/book_image/'.$have_read->image_url) }}" style="max-width: 100px; height: 141.53px; object-fit:cover;" alt="">
-            @endif
-            <h3 class="ml-3">{!! nl2br(e($have_read->title)) !!}<br>（{!! nl2br(e($have_read->writer)) !!}）</h3>
+                @if (!isset($have_read->image_url))
+                    <img class="rounded img-fluid" src="{{ asset('storage/book_image/no_image.png') }}" alt="">
+                @else
+                    <img class="book_image rounded img-fluid" src="{{ asset('storage/book_image/'.$have_read->image_url) }}" alt="">
+                @endif
+                <h3 class="ml-3">{!! nl2br(e($have_read->title)) !!}<br>（{!! nl2br(e($have_read->writer)) !!}）</h3>
             </div>
             <hr>
             <span>読み終わった日：{!! $completion_dates[$have_read->id] !!}</span>

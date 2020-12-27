@@ -2,8 +2,40 @@
 
 /* Welcome
 ------------------------------ */
+.nickname {
+    font-size: 1.2rem;
+}
 @media (max-width: 576px) {
     .book-status {
         margin-top: 2rem;
+    }
+}
+
+/* Books
+------------------------------ */
+
+/* Reviews
+------------------------------ */
+.reviews h3 {
+    font-size: 1.4rem;
+}
+.reviews img {
+    max-width: 100px;
+    height: 141.531px;
+}
+
+.reviews .book_image {
+    object-fit: cover;
+}
+
+@media(max-width: 576px) {
+    .reviews img {
+        max-width: 50px;
+        height: 70.766px;
+    }
+    .reviews h3 {
+        font-size: 1.2rem;
+        flex: 0 0 75%;
+        max-width: 75%;
     }
 }

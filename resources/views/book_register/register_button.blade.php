@@ -1,7 +1,7 @@
 @if (Auth::user()->is_registering($book->id))
     {{-- 登録解除ボタンのフォーム --}}
     {!! Form::open(['route' => ['book.unregister', $book->id], 'method' => 'delete']) !!}
-        {!! Form::submit('解除', ['class' => "btn btn-danger btn-block"]) !!}
+        {!! Form::submit('解除', ['class' => "btn btn-danger btn-block mt-4"]) !!}
     {!! Form::close() !!}
 @else
     {{-- 登録ボタンのフォーム --}}

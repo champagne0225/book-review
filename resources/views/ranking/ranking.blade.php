@@ -3,7 +3,7 @@
 @section('content')
     
     <div class="jumbotron" style="padding: 2rem;">
-        <h3 style="display: inline;">読んだ本</h3>
+        <h3 style="display: inline; font-size: 1.4rem;">読んだ本</h3>
         <hr>
         <ul class="list-unstyled mb-0 row row-cols-1 row-cols-sm-2 row-cols-md-3">
             @if($ranking_have_reads1)
@@ -94,7 +94,7 @@
     </div>
 
     <div class="jumbotron" style="padding: 2rem;">
-        <h3 style="display: inline;">読んでる本</h3>
+        <h3 style="display: inline; font-size: 1.4rem;">読んでる本</h3>
         <hr>
         <ul class="list-unstyled mb-0 row row-cols-1 row-cols-sm-2 row-cols-md-3">
             @if($ranking_readings1)
@@ -185,7 +185,7 @@
     </div>
 
     <div class="jumbotron" style="padding: 2rem;">
-        <h3 style="display: inline;">読みたい本</h3>
+        <h3 style="display: inline; font-size: 1.4rem;">読みたい本</h3>
         <hr>
         <ul class="list-unstyled mb-0 row row-cols-1 row-cols-sm-2 row-cols-md-3">
             @if($ranking_want_to_reads1)

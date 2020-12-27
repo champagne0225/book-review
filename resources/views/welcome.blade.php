@@ -6,7 +6,7 @@
             <aside class="col-sm-3">
                 <div class="card">
                     <div class="card-header">
-                        <h3 class="card-title">{{ Auth::user()->nickname }}</h3>
+                        <h4 class="nickname card-title mb-0 text-center">{{ Auth::user()->nickname }}</h4>
                     </div>
                     <div class="card-body">
                         {{-- 認証済みユーザのメールアドレスをもとにGravatarを取得して表示 --}}
@@ -16,7 +16,7 @@
             </aside>
             <div class="col-sm-9 book-status">
                 <div class="jumbotron" style="padding: 2rem;">
-                    <h3 style="display: inline;">読んでる本<span class="badge badge-secondary ml-2">{!! $readings_counts !!}</span></h3>
+                    <h3 style="display: inline; font-size: 1.4rem;">読んでる本<span class="badge badge-success ml-2">{!! $readings_counts !!}</span></h3>
                     <hr>
                     @if (count($readings) > 0)
                         <ul class="list-unstyled mb-0 row row-cols-2 row-cols-md-3 row-cols-lg-4">
@@ -26,7 +26,7 @@
                                         @if (!isset($reading->image_url))
                                             <img class="rounded img-fluid" src="{{ asset('storage/book_image/no_image.png') }}" style="max-width: 100px; height: 141.531px;" alt="">
                                         @else
-                                            <img class="rounded img-fluid" src="{{ asset('storage/book_image/'.$reading->image_url) }}" style="max-width: 100px;" alt="">
+                                            <img class="rounded img-fluid" src="{{ asset('storage/book_image/'.$reading->image_url) }}" style="max-width: 100px; height: 141.531px; object-fit:cover;" alt="">
                                         @endif
                                         <p class="mb-0" style="height: 2.7rem; overflow:hidden;">{!! nl2br(e($reading->title)) !!}</p>
                                         <p class="mb-0" style="font-size: 0.8rem; height: 1.2rem; line-height: 1.4rem; overflow: hidden;">{!! nl2br(e($reading->writer)) !!}</p>
@@ -48,7 +48,7 @@
                     @endif
                 </div>
                 <div class="jumbotron" style="padding: 2rem;">
-                    <h3 style="display: inline;">読みたい本<span class="badge badge-secondary ml-2">{!! $want_to_reads_counts !!}</span></h3>
+                    <h3 style="display: inline; font-size: 1.4rem">読みたい本<span class="badge badge-success ml-2">{!! $want_to_reads_counts !!}</span></h3>
                     <hr>
                     @if (count($want_to_reads) > 0)
                         <ul class="list-unstyled mb-0 row row-cols-2 row-cols-md-3 row-cols-lg-4">
@@ -58,7 +58,7 @@
                                         @if (!isset($want_to_read->image_url))
                                             <img class="rounded img-fluid" src="{{ asset('storage/book_image/no_image.png') }}" style="max-width: 100px; height: 141.531px;" alt="">
                                         @else
-                                            <img class="rounded img-fluid" src="{{ asset('storage/book_image/'.$want_to_read->image_url) }}" style="max-width: 100px;" alt="">
+                                            <img class="rounded img-fluid" src="{{ asset('storage/book_image/'.$want_to_read->image_url) }}" style="max-width: 100px; height: 141.531px; object-fit:cover;" alt="">
                                         @endif
                                         <p class="mb-0" style="height: 2.7rem; overflow:hidden;">{!! nl2br(e($want_to_read->title)) !!}</p>
                                         <p class="mb-0" style="font-size: 0.8rem; height: 1.2rem; line-height: 1.4rem; overflow: hidden;">{!! nl2br(e($want_to_read->writer)) !!}</p>
@@ -80,7 +80,7 @@
                     @endif
                 </div>
                 <div class="jumbotron" style="padding: 2rem;">
-                    <h3 style="display: inline;">読んだ本<span class="badge badge-secondary ml-2">{!! $have_reads_counts !!}</span></h3>
+                    <h3 style="display: inline; font-size: 1.4rem;">読んだ本<span class="badge badge-success ml-2">{!! $have_reads_counts !!}</span></h3>
                     <hr>
                     @if (count($have_reads) > 0)
                         <ul class="list-unstyled mb-0 row row-cols-2 row-cols-md-3 row-cols-lg-4">
@@ -90,7 +90,7 @@
                                         @if (!isset($have_read->image_url))
                                             <img class="rounded img-fluid" src="{{ asset('storage/book_image/no_image.png') }}" style="max-width: 100px; height: 141.531px;" alt="">
                                         @else
-                                            <img class="rounded img-fluid" src="{{ asset('storage/book_image/'.$have_read->image_url) }}" style="max-width: 100px; height: 141.53px; object-fit:cover;" alt="">
+                                            <img class="rounded img-fluid" src="{{ asset('storage/book_image/'.$have_read->image_url) }}" style="max-width: 100px; height: 141.531px; object-fit:cover;" alt="">
                                         @endif
                                         <p class="mb-0" style="height: 2.7rem; overflow: hidden;">{!! nl2br(e($have_read->title)) !!}</p>
                                         <p class="mb-0" style="font-size: 0.8rem; height: 1.2rem; line-height: 1.4rem; overflow: hidden;">{!! nl2br(e($have_read->writer)) !!}</p>
