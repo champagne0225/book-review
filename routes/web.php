@@ -24,6 +24,8 @@ Route::get('logout', 'Auth\LoginController@logout')->name('logout.get');
 
 Route::resource('books', 'BooksController');
 
+Route::get('ranking', 'BookRankingController@index')->name('ranking.index');
+
 Route::get('search','SearchController@index')->name('search');
 
 Route::group(['middleware' => ['auth']], function () {
@@ -37,6 +39,6 @@ Route::group(['middleware' => ['auth']], function () {
     Route::put('reviews/{book_id}', 'BookReviewController@update')->name('review.update');
     Route::get('reviews/{book_id}/edit', 'BookReviewController@edit')->name('review.edit');
     Route::get('reviews', 'BookReviewController@index')->name('reviews.index');
-    
+
     Route::resource('books', 'BooksController', ['only' => ['store', 'destroy']]);
 });

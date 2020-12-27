@@ -15,6 +15,7 @@
                     <li class="nav-item">{!! link_to_route('mypage', 'マイページ', [], ['class' => 'nav-link']) !!}</li>
                     <li class="nav-item ml-3">{!! link_to_route('books.index', '検索・登録', [], ['class' => 'nav-link']) !!}</li>
                     <li class="nav-item ml-3">{!! link_to_route('reviews.index', '感想・レビュー', [], ['class' => 'nav-link']) !!}</li>
+                    <li class="nav-item ml-3">{!! link_to_route('ranking.index', 'ランキング', [], ['class' => 'nav-link']) !!}</li>
                     <li class="nav-item dropdown ml-3">
                         <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">メニュー</a>
                         <ul class="dropdown-menu dropdown-menu-right">
@@ -26,6 +27,8 @@
                         </ul>
                     </li>
                 @else 
+                    {{-- ランキングページへのリンク --}}
+                    <li class="nav-item ml-3">{!! link_to_route('ranking.index', 'ランキング', [], ['class' => 'nav-link']) !!}</li>
                     {{-- ユーザ登録ページへのリンク --}}
                     <li class="nav-item">{!! link_to_route('signup.get', '新規会員登録', [], ['class' => 'nav-link']) !!}</li>
                     {{-- ログインページへのリンク --}}
