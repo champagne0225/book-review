@@ -41,7 +41,6 @@ class BooksController extends Controller
         
         $book = new Book;
 
-        $book->image_url = str_replace('public/book_image/', '', $filepath);
         $book->title = $request->title;
         $book->writer = $request->writer;
         $book->image_url = $request->image_url;
